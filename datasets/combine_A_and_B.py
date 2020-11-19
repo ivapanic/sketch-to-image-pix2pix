@@ -44,11 +44,13 @@ for sp in splits:
     print('split = %s, number of images = %d' % (sp, num_imgs))
     for n in range(num_imgs):
         name_A = img_list[n]
+        name_A_raw = name_A.split('.')[0]
         path_A = os.path.join(img_fold_A, name_A)
         if args.use_AB:
             name_B = name_A.replace('_A.', '_B.')
         else:
-            name_B = name_A
+            
+            name_B = name_A_raw + ".png"
         path_B = os.path.join(img_fold_B, name_B)
         if os.path.isfile(path_A) and os.path.isfile(path_B):
             name_AB = name_A
