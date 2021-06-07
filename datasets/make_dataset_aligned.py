@@ -33,7 +33,7 @@ def align_images(a_file_paths, b_file_paths, target_path):
             img_name_b = b_file_paths[j]
             path_elements_b = img_name_b.split('/')
             img_b_name_split = path_elements_b[len(path_elements_b) - 1].split('-')[0]
-            if (img_a_name_split.equals(img_b_name_split)):
+            if (img_a_name_split == img_b_name_split):
                 img_b = Image.open(b_file_paths[j])
                 assert(img_a.size == img_b.size)
                 aligned_image = Image.new("RGB", (img_a.size[0] * 2, img_a.size[1]))
