@@ -26,7 +26,7 @@ def align_images(a_file_paths, b_file_paths, target_path):
         img_name_a = a_file_paths[i]
         img_a = Image.open(img_name_a)
 
-        """path_elements_a = img_name_a.split('/')
+        path_elements_a = img_name_a.split('/')
         img_a_name_split = path_elements_a[len(path_elements_a) - 1].split('.')[0]
 
         for j in range(len(b_file_paths)):
@@ -39,14 +39,14 @@ def align_images(a_file_paths, b_file_paths, target_path):
                 aligned_image = Image.new("RGB", (img_a.size[0] * 2, img_a.size[1]))
                 aligned_image.paste(img_a, (0, 0))
                 aligned_image.paste(img_b, (img_a.size[0], 0))
-                aligned_image.save(os.path.join(target_path, '{:04d-04d}.jpg'.format(i, j)))"""
-        img_name_b = b_file_paths[i]
+                aligned_image.save(os.path.join(target_path, '{:04d-04d}.jpg'.format(i, j)))
+        """img_name_b = b_file_paths[i]
         img_b = Image.open(img_name_b)
         assert(img_a.size == img_b.size)
         aligned_image = Image.new("RGB", (img_a.size[0] * 2, img_a.size[1]))
         aligned_image.paste(img_a, (0, 0))
         aligned_image.paste(img_b, (img_a.size[0], 0))
-        aligned_image.save(os.path.join(target_path, '{:04d}.jpg'.format(i)))
+        aligned_image.save(os.path.join(target_path, '{:04d}.jpg'.format(i)))"""
 
 
 if __name__ == '__main__':
