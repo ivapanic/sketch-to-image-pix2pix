@@ -49,8 +49,10 @@ for sp in splits:
         if args.use_AB:
             name_B = name_A.replace('_A.', '_B.')
         else:
-            
-            name_B = name_A_raw + ".png"
+            if name_A.split('.')[1] == '.jpg':
+                name_B = name_A_raw + ".jpg"
+            else:
+                name_B = name_A_raw + ".png"
         path_B = os.path.join(img_fold_B, name_B)
         if os.path.isfile(path_A) and os.path.isfile(path_B):
             name_AB = name_A
